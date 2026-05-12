@@ -15,7 +15,11 @@ const app = express();
 // ── Middleware ─────────────────────────────────────────────────────────────────
 app.use(
   cors({
-    origin: ["http://localhost:5174"],
+    origin: [
+      "http://localhost:5174",
+      "https://myprojectfrontend-gamma.vercel.app", 
+    ],
+    credentials: true,
   }),
 );
 app.use(express.json());
