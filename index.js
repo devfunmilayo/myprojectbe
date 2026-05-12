@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
-const passwordRoutes = require("./routes/password");
+const passwordRoutes = require("./routes/Password");
 const newsletterRoutes = require("./routes/newsletter");
 const orderRoutes = require("./routes/orders");
 const sellerRoutes    = require("./routes/seller");
