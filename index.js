@@ -26,6 +26,7 @@ app.use(express.json());
 
 // ── Routes ────────────────────────────────────────────────────────────────────
 app.use("/auth", authRoutes);
+
 app.use("/auth", passwordRoutes);
 app.use("/users", userRoutes);
 app.use("/newsletter", newsletterRoutes);
