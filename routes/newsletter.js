@@ -56,7 +56,7 @@ router.post("/subscribe", async (req, res) => {
                     <tr>
                       <td style="padding:32px 40px 0;">
                         <p style="color:#6B7280;font-size:14px;line-height:1.8;margin:0;">
-                          Hey there! 👋 Welcome to the Mercova Weekly Digest — your Monday dose of trending products, creator tips, and exclusive deals. Here's what's hot this week 🔥
+                          Hey there! Welcome to the Mercova Weekly Digest — your Monday dose of trending products, creator tips, and exclusive deals. Here's what's hot this week 🔥
                         </p>
                       </td>
                     </tr>
@@ -80,7 +80,7 @@ router.post("/subscribe", async (req, res) => {
                               <table cellpadding="0" cellspacing="0">
                                 <tr>
                                   <td style="font-size:18px;font-weight:800;color:#111827;padding-right:16px;">$149</td>
-                                  <td><a href="http://localhost:5173/product/1" style="background:#2563EB;color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:8px;text-decoration:none;">View Course →</a></td>
+                                  <td><a href="https://myprojectfrontend-gamma.vercel.app/product/1" style="background:#2563EB;color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:8px;text-decoration:none;">View Course →</a></td>
                                 </tr>
                               </table>
                             </td>
@@ -98,7 +98,7 @@ router.post("/subscribe", async (req, res) => {
                               <table cellpadding="0" cellspacing="0">
                                 <tr>
                                   <td style="font-size:18px;font-weight:800;color:#111827;padding-right:16px;">$39</td>
-                                  <td><a href="http://localhost:5173/product/2" style="background:#D97706;color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:8px;text-decoration:none;">Get the Book →</a></td>
+                                  <td><a href="https://myprojectfrontend-gamma.vercel.app/product/2" style="background:#D97706;color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:8px;text-decoration:none;">Get the Book →</a></td>
                                 </tr>
                               </table>
                             </td>
@@ -116,7 +116,7 @@ router.post("/subscribe", async (req, res) => {
                               <table cellpadding="0" cellspacing="0">
                                 <tr>
                                   <td style="font-size:18px;font-weight:800;color:#111827;padding-right:16px;">$89</td>
-                                  <td><a href="http://localhost:5173/product/3" style="background:#7C3AED;color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:8px;text-decoration:none;">Get the Kit →</a></td>
+                                  <td><a href="https://myprojectfrontend-gamma.vercel.app/product/3" style="background:#7C3AED;color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:8px;text-decoration:none;">Get the Kit →</a></td>
                                 </tr>
                               </table>
                             </td>
@@ -176,7 +176,7 @@ router.post("/subscribe", async (req, res) => {
                     <!-- CTA -->
                     <tr>
                       <td style="padding:32px 40px;text-align:center;">
-                        <a href="http://localhost:5173/buyer"
+                        <a href="https://myprojectfrontend-gamma.vercel.app/buyer"
                           style="display:inline-block;background:#2563EB;color:#fff;font-size:15px;font-weight:800;padding:16px 40px;border-radius:14px;text-decoration:none;">
                           Browse All Products →
                         </a>
