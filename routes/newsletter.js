@@ -213,8 +213,8 @@ router.post("/subscribe", async (req, res) => {
 
     res.json({ message: "Subscribed! Your first digest is on its way 🎉" });
   } catch (err) {
-    console.error("Newsletter error:", err);
-    res.status(500).json({ message: "Could not subscribe. Try again." });
+    console.error("Newsletter error:", err.message);
+    res.status(500).json({ message: err.message });
   }
 });
 
