@@ -37,7 +37,7 @@ router.post("/subscribe", async (req, res) => {
                               <span style="background:#F59E0B;color:#78350F;font-size:11px;font-weight:800;padding:6px 14px;border-radius:20px;">ISSUE #1</span>
                             </td>
                           </tr>
-                        </table>
+                        </table>'
                       </td>
                     </tr>
                     <tr>

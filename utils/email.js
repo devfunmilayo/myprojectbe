@@ -1,17 +1,10 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-// ✅ Using your actual .env variable names
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.APP_MAIL,
-    pass: process.env.APP_PASSWORD,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendWelcomeEmail = async (user) => {
-  await transporter.sendMail({
-    from: `"Mercova" <${process.env.APP_MAIL}>`,
+  await resend.emails.send({
+    from: "Mercova <onboarding@resend.dev>",
     to: user.email,
     subject: "Welcome to Mercova 🎉",
     html: `
@@ -23,16 +16,12 @@ const sendWelcomeEmail = async (user) => {
             <tr>
               <td align="center">
                 <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-
-                  <!-- Header -->
                   <tr>
                     <td style="background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);padding:40px;text-align:center;">
                       <h1 style="color:#ffffff;font-size:28px;font-weight:800;margin:0;">Mercova</h1>
                       <p style="color:#94A3B8;font-size:13px;margin:6px 0 0;">The premium infrastructure for digital visionaries</p>
                     </td>
                   </tr>
-
-                  <!-- Hero -->
                   <tr>
                     <td style="padding:40px 40px 0;text-align:center;">
                       <div style="font-size:48px;margin-bottom:16px;">🎉</div>
@@ -44,8 +33,6 @@ const sendWelcomeEmail = async (user) => {
                       </p>
                     </td>
                   </tr>
-
-                  <!-- Cards -->
                   <tr>
                     <td style="padding:32px 40px;">
                       <table width="100%" cellpadding="0" cellspacing="0">
@@ -65,48 +52,52 @@ const sendWelcomeEmail = async (user) => {
                       </table>
                     </td>
                   </tr>
-
-                  <!-- Trending -->
                   <tr>
                     <td style="padding:0 40px 32px;">
                       <h3 style="color:#111827;font-size:15px;font-weight:800;margin:0 0 16px;">🔥 Trending on Mercova</h3>
                       <table width="100%" cellpadding="0" cellspacing="0">
-                        ${[
-                          { emoji: "💻", title: "Growth Hacking Mastery", price: "$149", badge: "COURSE" },
-                          { emoji: "📘", title: "The Solopreneur Playbook", price: "$39", badge: "EBOOK" },
-                          { emoji: "🎨", title: "Elite UI Component Kit", price: "$89", badge: "ASSETS" },
-                        ].map((p) => `
-                          <tr>
-                            <td style="padding:10px 0;border-bottom:1px solid #F3F4F6;">
-                              <table width="100%" cellpadding="0" cellspacing="0">
-                                <tr>
-                                  <td width="40" style="font-size:24px;">${p.emoji}</td>
-                                  <td>
-                                    <div style="font-size:13px;font-weight:700;color:#111827;">${p.title}</div>
-                                    <span style="font-size:10px;font-weight:800;color:#1D4ED8;background:#DBEAFE;padding:2px 8px;border-radius:20px;">${p.badge}</span>
-                                  </td>
-                                  <td align="right" style="font-size:14px;font-weight:800;color:#111827;">${p.price}</td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                        `).join("")}
+                        <tr>
+                          <td style="padding:10px 0;border-bottom:1px solid #F3F4F6;">
+                            <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                              <td width="40" style="font-size:24px;">💻</td>
+                              <td><div style="font-size:13px;font-weight:700;color:#111827;">Growth Hacking Mastery</div>
+                              <span style="font-size:10px;font-weight:800;color:#1D4ED8;background:#DBEAFE;padding:2px 8px;border-radius:20px;">COURSE</span></td>
+                              <td align="right" style="font-size:14px;font-weight:800;color:#111827;">$149</td>
+                            </tr></table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding:10px 0;border-bottom:1px solid #F3F4F6;">
+                            <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                              <td width="40" style="font-size:24px;">📘</td>
+                              <td><div style="font-size:13px;font-weight:700;color:#111827;">The Solopreneur Playbook</div>
+                              <span style="font-size:10px;font-weight:800;color:#1D4ED8;background:#DBEAFE;padding:2px 8px;border-radius:20px;">EBOOK</span></td>
+                              <td align="right" style="font-size:14px;font-weight:800;color:#111827;">$39</td>
+                            </tr></table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding:10px 0;">
+                            <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                              <td width="40" style="font-size:24px;">🎨</td>
+                              <td><div style="font-size:13px;font-weight:700;color:#111827;">Elite UI Component Kit</div>
+                              <span style="font-size:10px;font-weight:800;color:#1D4ED8;background:#DBEAFE;padding:2px 8px;border-radius:20px;">ASSETS</span></td>
+                              <td align="right" style="font-size:14px;font-weight:800;color:#111827;">$89</td>
+                            </tr></table>
+                          </td>
+                        </tr>
                       </table>
                     </td>
                   </tr>
-
-                  <!-- CTA -->
                   <tr>
                     <td style="padding:0 40px 40px;text-align:center;">
-                      <a href="http://localhost:5173/buyer"
+                      <a href="https://myprojectfrontend-gamma.vercel.app/buyer"
                         style="display:inline-block;background:#2563EB;color:#ffffff;font-size:15px;font-weight:800;padding:16px 40px;border-radius:14px;text-decoration:none;">
                         Start Exploring Mercova →
                       </a>
                       <p style="color:#9CA3AF;font-size:12px;margin:16px 0 0;">Questions? Reply to this email — we're happy to help.</p>
                     </td>
                   </tr>
-
-                  <!-- Footer -->
                   <tr>
                     <td style="background:#F9FAFB;padding:24px 40px;border-top:1px solid #E5E7EB;">
                       <table width="100%" cellpadding="0" cellspacing="0">
@@ -122,7 +113,6 @@ const sendWelcomeEmail = async (user) => {
                       </table>
                     </td>
                   </tr>
-
                 </table>
               </td>
             </tr>
